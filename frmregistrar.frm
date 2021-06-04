@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin VB.Form frmregistrar 
    Caption         =   "Registrar reactivos"
-   ClientHeight    =   8205
+   ClientHeight    =   8595
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   15645
+   ClientWidth     =   16350
    LinkTopic       =   "Form1"
    Picture         =   "frmregistrar.frx":0000
-   ScaleHeight     =   8205
-   ScaleWidth      =   15645
+   ScaleHeight     =   8595
+   ScaleWidth      =   16350
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command2 
@@ -96,6 +96,7 @@ Begin VB.Form frmregistrar
       Width           =   3015
    End
    Begin VB.TextBox txtcantidad 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Yu Gothic"
          Size            =   21.75
@@ -249,17 +250,32 @@ If txtcantidadregistrar.Text = "" Then
         MsgBox "Ingrese una cantidad a registrar", vbInformation, "Laboratorios el Puente"
     Else
         If txtnombre.Text = "" Then
-                MsgBox "Seleccione un nombre", vbInformation, "Laboratorios el Puente"
+                MsgBox "Ingrese un nombre", vbInformation, "Laboratorios el Puente"
         Else
-            Resultado = Val(txtcantidad.Text) + Val(txtcantidadregistrar.Text)
-            rsReactivos.Fields("NúmeroReactivos") = Resultado
-            rsReactivos.Update
-            If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
-                MsgBox "Reactivo registrado", vbInformation, "Laboratorios el Puente"
-                Unload Me
-                frmbuscar.Show
+            If txtfecha.Text = "" Then
+                MsgBox "Ingrese una fecha", vbInformation, "Laboratorios el Puente"
             Else
-                MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
+                If txtmarca.Text = "" Then
+                    MsgBox "Ingrese la marca", vbInformation, "Laboratorios el Puente"
+                Else
+                    If Verificar = 1 Then
+                        'guardar nuevo reactivo
+                        MsgBox "Guardar datos nuevos"
+                        Unload Me
+                        frmbuscar.Show
+                        Exit Sub
+                    End If
+                        Resultado = Val(txtcantidad.Text) + Val(txtcantidadregistrar.Text)
+                        rsReactivos.Fields("NúmeroReactivos") = Resultado
+                        rsReactivos.Update
+                        If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
+                            MsgBox "Reactivo registrado", vbInformation, "Laboratorios el Puente"
+                            Unload Me
+                            frmbuscar.Show
+                        Else
+                            MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
+                        End If
+                End If
             End If
         End If
     End If
@@ -284,3 +300,4 @@ Private Sub Form_Load()
     txtfecha.Text = Fecha
     txtmarca.Text = Marca
 End Sub
+

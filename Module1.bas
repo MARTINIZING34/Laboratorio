@@ -1,9 +1,10 @@
 Attribute VB_Name = "Module1"
-Global Nombre, Fecha, Marca, Cantidad, Resultado As Integer
+Global Nombre, Fecha, Marca, Cantidad, Resultado, Verificar As Integer
 Global Usuario As String
 Global cn As New ADODB.Connection
 Global rsReactivos As New ADODB.Recordset
 Global rsRegistro As New ADODB.Recordset
+Global rsUsuarios As New ADODB.Recordset
 
 Sub main()
     With cn
@@ -27,5 +28,14 @@ Sub TablaRegistro_Uso()
         .CursorType = adOpenKeyset
         .LockType = adLockOptimistic
         .Open "select * from Registro_Uso", cn
+    End With
+End Sub
+Sub Usuarios()
+    With rsUsuarios
+        If .State = 1 Then .Close
+        .Source = "Reactivos"
+        .CursorType = adOpenKeyset
+        .LockType = adLockOptimistic
+        .Open "select * from Doctores", cn
     End With
 End Sub

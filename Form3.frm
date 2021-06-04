@@ -249,19 +249,25 @@ Private Sub Command1_Click()
         If txtnombre.Text = "" Then
                 MsgBox "Seleccione un nombre", vbInformation, "Laboratorios el Puente"
         Else
-            
-            rsRegistro.AddNew
-            rsRegistro ("Doctor_ID") = val(rsA
-            rsRegistro("Identificador") = Val(rsReactivos!Identificador)
-            rsRegistro.Update
-            
+            'TablaRegistro_Uso
+            'With rsRegistro
+                '.Requery
+                '.AddNew
+                '!Doctor_ID = Val(txtnombre.Text)
+                '!Identificador = Val(rsReactivos!Identificador)
+                'rsRegistro.Fields("Doctor_ID") = txtnombre.Text
+                'rsRegistro ("Doctor_ID") = val(
+                'rsRegistro("Identificador") = Val(rsReactivos!Identificador)
+                '.UpdateBatch
+            'End With
             Resultado = Val(txtcantidad.Text) - Val(txtcantidadutilizar.Text)
             rsReactivos.Fields("NúmeroReactivos") = Resultado
             rsReactivos.Update
             If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
                 MsgBox "Cambios realizados", vbInformation, "Laboratorios el Puente"
-                Unload Me
                 frmbuscar.Show
+                Unload Me
+                
             Else
                 MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
             End If

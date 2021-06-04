@@ -152,6 +152,10 @@ Adodc1.Refresh
 If Adodc1.Recordset.EOF Then
     MsgBox "Revise sus datos y vuelva a intentarlo", vbInformation, "Laboratorios el Puente "
 Else
+    
+    'Usuarios
+    'Adodc1.Find "Doctor_ID = '" & txtid.Text & "'", , , 1
+    'txtid.Text = Adodc1.Fields("Doctor_ID")
     Usuario = txtusuario.Text
     frmbuscar.Show
     Unload Me
