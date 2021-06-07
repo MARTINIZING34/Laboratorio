@@ -7,13 +7,49 @@ Begin VB.Form frmbuscar
    ClientHeight    =   7800
    ClientLeft      =   225
    ClientTop       =   570
-   ClientWidth     =   16035
+   ClientWidth     =   16500
    LinkTopic       =   "Form2"
    Picture         =   "Form2.frx":0000
    ScaleHeight     =   7800
-   ScaleWidth      =   16035
+   ScaleWidth      =   16500
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command3 
+      BackColor       =   &H00FFFF80&
+      Caption         =   "Eliminar"
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   16920
+      MaskColor       =   &H00000000&
+      TabIndex        =   14
+      Top             =   5400
+      Width           =   2175
+   End
+   Begin VB.CommandButton cmdmodificar 
+      Caption         =   "Modificar"
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   14280
+      TabIndex        =   13
+      Top             =   7080
+      Width           =   2175
+   End
    Begin VB.CommandButton cmdregistrar 
       BackColor       =   &H00FFFF80&
       Caption         =   "Registrar"
@@ -77,8 +113,8 @@ Begin VB.Form frmbuscar
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
-      OLEDBString     =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
+      Connect         =   $"Form2.frx":B2C0
+      OLEDBString     =   $"Form2.frx":B348
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -124,8 +160,8 @@ Begin VB.Form frmbuscar
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
-      OLEDBString     =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
+      Connect         =   $"Form2.frx":B3D0
+      OLEDBString     =   $"Form2.frx":B458
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -145,7 +181,7 @@ Begin VB.Form frmbuscar
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "Form2.frx":B2C0
+      Bindings        =   "Form2.frx":B4E0
       Height          =   4335
       Left            =   360
       TabIndex        =   10
@@ -367,98 +403,53 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 
-Private Sub cmdregistrar_Click()
-
-
-'--------------------------------
+Private Sub cmdmodificar_Click()
 If Len(Trim(txtbuscartexto.Text)) = 0 Then
-        If MsgBox("¿Desea registrar un nuevo reactivo?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-            Nombre = ""
-            Cantidad = ""
-            Fecha = ""
-            Marca = ""
-            Verificar = 1
+    MsgBox "Seleccione el reactivo a modificar", vbInformation, "Laboratorios el Puente "
+Else
+    rsReactivos.Find "NombreReactivos = '" & txtbuscartexto.Text & "'", , , 1
+    If rsReactivos.BOF = False And rsReactivos.EOF = False Then
+        'cargar datos a las cajas de texto
+        txtnombre.Text = rsReactivos.Fields("NombreReactivos")
+        txtcantidad.Text = rsReactivos.Fields("NúmeroReactivos")
+        txtfecha.Text = rsReactivos.Fields("FechaExpiración")
+        txtmarca.Text = rsReactivos.Fields("Marca")
+        Nombre = txtnombre.Text
+        Cantidad = txtcantidad.Text
+        Fecha = txtfecha.Text
+        Marca = txtmarca.Text
+        If MsgBox("¿Desea modificar el reactivo seleccionado?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
             Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
             Adodc2.Refresh
             If Adodc2.Recordset.EOF Then
-                MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
+                MsgBox "Solo administradores pueden modificar reactivos", vbInformation, "Laboratorios el Puente "
             Else
+                Verificar = 0
                 frmregistrar.Show
-                
                 Unload Me
             End If
         End If
-Else
-        If txtusuario.Text = "" Then
-            MsgBox "Seleccione un usuario", vbInformation, "Laboratorios el Puente"
+    End If
+End If
+End Sub
+
+Private Sub cmdregistrar_Click()
+    If MsgBox("¿Desea registrar un nuevo reactivo?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+        Nombre = ""
+        Cantidad = ""
+        Fecha = ""
+        Marca = ""
+        Verificar = 1
+        Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
+        Adodc2.Refresh
+        If Adodc2.Recordset.EOF Then
+            MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
         Else
-            rsReactivos.Find "NombreReactivos = '" & txtbuscartexto.Text & "'", , , 1
-            If rsReactivos.BOF = False And rsReactivos.EOF = False Then
-                'cargar datos a las cajas de texto
-                txtnombre.Text = rsReactivos.Fields("NombreReactivos")
-                txtcantidad.Text = rsReactivos.Fields("NúmeroReactivos")
-                txtfecha.Text = rsReactivos.Fields("FechaExpiración")
-                txtmarca.Text = rsReactivos.Fields("Marca")
-                Nombre = txtnombre.Text
-                Cantidad = txtcantidad.Text
-                Fecha = txtfecha.Text
-                Marca = txtmarca.Text
-                If txtcantidad.Text < 25 Then
-                    MsgBox "La cantidad restante de reactivos es inferior a 25 por favor registre más reactivos", vbInformation, "Laboratorios el Puente"
-                    
-                    'If MsgBox("La cantidad restante de reactivos es inferior a 25 por favor registre más reactivos", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-                    
-                    
-                    
-                    'Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
-                   ' Adodc2.Refresh
-                    'If Adodc2.Recordset.EOF Then
-                       ' MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
-                   ' Else
-                       ' frmregistrar.Show
-                       ' Unload Me
-                End If
-            Else
-                    If MsgBox("¿Desea utilizar el reactivo?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-                        frmuso.Show
-                        Unload Me
-                    End If
-            End If
-        
-                If MsgBox("¿Desea añadir más reactivos?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-                        
-                        Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
-                        Adodc2.Refresh
-                        If Adodc2.Recordset.EOF Then
-                            MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
-                        Else
-                            frmregistrar.Show
-                            Unload Me
-                        End If
-                        
-                        
-                        
-                        
-                        
-                        
-                    End If
-            End If
-            End If
-    
-    
-
-
-
-
-'Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
-'Adodc2.Refresh
-'If Adodc2.Recordset.EOF Then
- '   MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
-'Else
- '   frmregistrar.Show
-  '  Unload Me
-'End If
-    '--------------------
+            frmregistrar.Show
+            
+            Unload Me
+        End If
+    End If
 End Sub
 
 Private Sub Command1_Click()
@@ -484,28 +475,12 @@ Private Sub Command1_Click()
                 Else
                 If txtcantidad.Text < 25 Then
                     MsgBox "La cantidad restante de reactivos es inferior a 25 por favor registre más reactivos", vbInformation, "Laboratorios el Puente"
-                    
-                    'If MsgBox("La cantidad restante de reactivos es inferior a 25 por favor registre más reactivos", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-                    
-                    
-                    
-                    'Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
-                   ' Adodc2.Refresh
-                    'If Adodc2.Recordset.EOF Then
-                       ' MsgBox "Solo administradores pueden registrar reactivos", vbInformation, "Laboratorios el Puente "
-                   ' Else
-                       ' frmregistrar.Show
-                       ' Unload Me
-                    
-                
-                    
                 Else
                     If MsgBox("¿Desea utilizar el reactivo?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
                         frmuso.Show
                         Unload Me
                     End If
                 End If
-            
                 frmuso.Show
                 End If
             End If
@@ -521,13 +496,37 @@ Private Sub Command2_Click()
     End If
 End Sub
 
+Private Sub Command3_Click()
+If Len(Trim(txtbuscartexto.Text)) = 0 Then
+    MsgBox "Seleccione el reactivo a eliminar", vbInformation, "Laboratorios el Puente "
+Else
+    rsReactivos.Find "NombreReactivos = '" & txtbuscartexto.Text & "'", , , 1
+    If rsReactivos.BOF = False And rsReactivos.EOF = False Then
+        If MsgBox("¿Desea eliminar el reactivo seleccionado?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+            Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
+            Adodc2.Refresh
+            If Adodc2.Recordset.EOF Then
+                MsgBox "Solo administradores pueden eliminar reactivos", vbInformation, "Laboratorios el Puente "
+            Else
+                rsReactivos.Delete
+                MsgBox "Reactivo eliminado", vbInformation, "Laboratorios el Puente "
+                Unload Me
+                frmbuscar.Show
+                DataGrid1.Refresh
+            End If
+        End If
+    End If
+End If
+
+End Sub
+
 Private Sub DataGrid1_Click()
     txtbuscartexto.Text = DataGrid1.Columns(1).Text
 End Sub
 
 Private Sub Form_Load()
     Label3.ForeColor = RGB(69, 110, 174)
-    Label2.ForeColor = RGB(69, 110, 174)
+    label2.ForeColor = RGB(69, 110, 174)
     txtusuario.Text = Usuario
     TablaReactivos
     formato

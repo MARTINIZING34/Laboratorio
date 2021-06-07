@@ -41,8 +41,8 @@ Begin VB.Form frminicio
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
-      OLEDBString     =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
+      Connect         =   $"Form1.frx":2E7D8
+      OLEDBString     =   $"Form1.frx":2E860
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""

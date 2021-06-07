@@ -57,8 +57,8 @@ Begin VB.Form frmuso
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
-      OLEDBString     =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Bravo\Desktop\Git\G1\Laboratorio.mdb;Persist Security Info=False"
+      Connect         =   $"Form3.frx":B2C0
+      OLEDBString     =   $"Form3.frx":B348
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -260,16 +260,31 @@ Private Sub Command1_Click()
                 'rsRegistro("Identificador") = Val(rsReactivos!Identificador)
                 '.UpdateBatch
             'End With
-            Resultado = Val(txtcantidad.Text) - Val(txtcantidadutilizar.Text)
-            rsReactivos.Fields("NúmeroReactivos") = Resultado
-            rsReactivos.Update
-            If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
-                MsgBox "Cambios realizados", vbInformation, "Laboratorios el Puente"
-                frmbuscar.Show
-                Unload Me
-                
+            If Not (IsNumeric(txtcantidadutilizar.Text)) Then
+                MsgBox "Ingrese la cantidad en números", vbInformation, "Laboratorios el Puente"
+                txtcantidadutilizar.Text = ""
+                txtcantidadutilizar.SetFocus
             Else
-                MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
+                Resultado = Val(txtcantidad.Text) - Val(txtcantidadutilizar.Text)
+                rsReactivos.Fields("NúmeroReactivos") = Resultado
+                rsReactivos.Update
+                TablaRegistro_Uso
+                rsRegistro.AddNew
+                rsRegistro("Doctor_ID") = txtnombre.Text
+                rsRegistro("Identificador") = lblnombre.Caption
+                'rsRegistro("Doctor_ID") = txtnombre.Text
+                'rsRegistro("Identificador") = lblnombre.Caption
+                rsRegistro("Cantidad") = txtcantidadutilizar.Text
+                rsRegistro.Update
+                
+                If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
+                    MsgBox "Cambios realizados", vbInformation, "Laboratorios el Puente"
+                    frmbuscar.Show
+                    Unload Me
+                    
+                Else
+                    MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
+                End If
             End If
         End If
     End If

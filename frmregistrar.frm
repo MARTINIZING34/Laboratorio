@@ -245,40 +245,105 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Command1_Click()
-If txtcantidadregistrar.Text = "" Then
-        MsgBox "Ingrese una cantidad a registrar", vbInformation, "Laboratorios el Puente"
-    Else
+Private Sub Command1_Click() 'txtcantidad
+If Verificar = 0 Then
+    
+        'If txtcantidadregistrar.Text = "" Then
+            'MsgBox "Ingrese una cantidad a registrar", vbInformation, "Laboratorios el Puente"
+        'End If
+        
+    
         If txtnombre.Text = "" Then
                 MsgBox "Ingrese un nombre", vbInformation, "Laboratorios el Puente"
         Else
-            If txtfecha.Text = "" Then
-                MsgBox "Ingrese una fecha", vbInformation, "Laboratorios el Puente"
+            If txtcantidad.Text = "" Then
+                MsgBox "Ingrese una cantidad"
             Else
-                If txtmarca.Text = "" Then
-                    MsgBox "Ingrese la marca", vbInformation, "Laboratorios el Puente"
+                If txtfecha.Text = "" Then
+                    MsgBox "Ingrese una fecha", vbInformation, "Laboratorios el Puente"
                 Else
-                    If Verificar = 1 Then
-                        'guardar nuevo reactivo
-                        MsgBox "Guardar datos nuevos"
-                        Unload Me
-                        frmbuscar.Show
-                        Exit Sub
+                    If txtmarca.Text = "" Then
+                        MsgBox "Ingrese la marca", vbInformation, "Laboratorios el Puente"
+                    Else
+                        'If Verificar = 1 Then
+                            'guardar nuevo reactivo
+                           ' rsReactivos.AddNew
+                           ' rsReactivos("NombreReactivos") = txtnombre.Text
+                            'rsReactivos("NúmeroReactivos") = txtcantidad.Text
+                            'rsReactivos("FechaExpiración") = txtfecha.Text
+                            'rsReactivos("Marca") = txtmarca.Text
+                            'rsReactivos.Update
+                            'rsReactivos.Fields("NombreReactivos") = txtnombre.Text
+                            'MsgBox "Guardar datos nuevos"
+                            'Unload Me
+                            'frmbuscar.Show
+                            'Exit Sub
+                        'Else
+                            If Not (IsNumeric(txtcantidad.Text)) Then
+                                MsgBox "Ingrese la cantidad en números", vbInformation, "Laboratorios el Puente"
+                                txtcantidad.Text = ""
+                                txtcantidad.SetFocus
+                            Else
+                                
+                                    'Resultado = Val(txtcantidad.Text) + Val(txtcantidadregistrar.Text)
+                                rsReactivos.Fields("NúmeroReactivos") = txtcantidad.Text
+                                rsReactivos.Fields("NombreReactivos") = txtnombre.Text
+                                rsReactivos.Fields("FechaExpiración") = txtfecha.Text
+                                rsReactivos.Fields("Marca") = txtmarca.Text
+                                rsReactivos.Update
+                                If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
+                                    MsgBox "Reactivo modificado", vbInformation, "Laboratorios el Puente"
+                                    Unload Me
+                                    frmbuscar.Show
+                                Else
+                                    MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
+                                
+                                End If
+                            End If
                     End If
-                        Resultado = Val(txtcantidad.Text) + Val(txtcantidadregistrar.Text)
-                        rsReactivos.Fields("NúmeroReactivos") = Resultado
-                        rsReactivos.Update
-                        If rsReactivos.State = 1 Or rsReactivos.State = 0 Then
-                            MsgBox "Reactivo registrado", vbInformation, "Laboratorios el Puente"
-                            Unload Me
-                            frmbuscar.Show
-                        Else
-                            MsgBox "Ha ocurrido un error", vbInformation, "Laboratorios el Puente"
-                        End If
                 End If
             End If
         End If
-    End If
+        
+    
+'registar reactivos
+Else
+
+        If txtnombre.Text = "" Then
+                MsgBox "Ingrese un nombre", vbInformation, "Laboratorios el Puente"
+        Else
+            If txtcantidad.Text = "" Then
+                MsgBox "Ingrese una cantidad"
+            Else
+                If txtfecha.Text = "" Then
+                    MsgBox "Ingrese una fecha", vbInformation, "Laboratorios el Puente"
+                Else
+                    If txtmarca.Text = "" Then
+                        MsgBox "Ingrese la marca", vbInformation, "Laboratorios el Puente"
+                    Else
+                        If Not (IsNumeric(txtcantidad.Text)) Then
+                                MsgBox "Ingrese la cantidad en números", vbInformation, "Laboratorios el Puente"
+                                txtcantidad.Text = ""
+                                txtcantidad.SetFocus
+                        Else
+                            'guardar nuevo reactivo
+                            rsReactivos.AddNew
+                            rsReactivos("NombreReactivos") = txtnombre.Text
+                            rsReactivos("NúmeroReactivos") = txtcantidad.Text
+                            rsReactivos("FechaExpiración") = txtfecha.Text
+                            rsReactivos("Marca") = txtmarca.Text
+                            rsReactivos.Update
+                            'rsReactivos.Fields("NombreReactivos") = txtnombre.Text
+                            MsgBox "Reactivo registrado", vbInformation, "Laboratorios el Puente"
+                            Unload Me
+                            frmbuscar.Show
+                            Exit Sub
+                        End If
+                    End If
+                End If
+            End If
+        End If
+End If
 End Sub
 
 Private Sub Command2_Click()
@@ -289,7 +354,16 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Form_Load()
-    
+    If Verificar = 0 Then
+        txtcantidad.Enabled = True
+        Label5.Visible = False
+        txtcantidadregistrar.Visible = False
+    End If
+    If Verificar = 1 Then
+        Label5.Visible = False
+        txtcantidadregistrar.Visible = False
+        txtcantidad.Enabled = True
+    End If
     lblnombre.ForeColor = RGB(69, 110, 174)
     Label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)
