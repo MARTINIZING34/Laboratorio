@@ -25,15 +25,16 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   525
-      Left            =   5640
+      Left            =   8040
       TabIndex        =   8
-      Top             =   6240
+      Top             =   2400
+      Visible         =   0   'False
       Width           =   3255
    End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   495
-      Left            =   12960
-      Top             =   5520
+      Left            =   16440
+      Top             =   2640
       Visible         =   0   'False
       Width           =   1215
       _ExtentX        =   2143
@@ -89,10 +90,10 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   13200
+      Left            =   12240
       TabIndex        =   6
-      Top             =   4200
-      Width           =   1935
+      Top             =   5040
+      Width           =   2775
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Usar"
@@ -106,10 +107,10 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   13200
+      Left            =   12240
       TabIndex        =   5
-      Top             =   3240
-      Width           =   1935
+      Top             =   3720
+      Width           =   2775
    End
    Begin VB.TextBox txtcantidadutilizar 
       BeginProperty Font 
@@ -122,9 +123,9 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5640
+      Left            =   5160
       TabIndex        =   4
-      Top             =   4800
+      Top             =   6000
       Width           =   3255
    End
    Begin VB.TextBox txtcantidad 
@@ -139,10 +140,45 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5640
+      Left            =   7560
       TabIndex        =   2
-      Top             =   3360
+      Top             =   4200
+      Visible         =   0   'False
       Width           =   3255
+   End
+   Begin VB.Label Label6 
+      BackStyle       =   0  'Transparent
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   11
+      Top             =   4800
+      Width           =   1695
+   End
+   Begin VB.Label Label5 
+      BackStyle       =   0  'Transparent
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   10
+      Top             =   3600
+      Width           =   2295
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
@@ -158,14 +194,14 @@ Begin VB.Form frmuso
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   1215
-      Left            =   960
+      Left            =   3000
       TabIndex        =   9
       Top             =   360
       Width           =   10695
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Quien usará el reactivo:"
+      Caption         =   "Usuario:"
       BeginProperty Font 
          Name            =   "Yu Gothic"
          Size            =   21.75
@@ -175,11 +211,11 @@ Begin VB.Form frmuso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   480
+      Height          =   1095
+      Left            =   840
       TabIndex        =   7
-      Top             =   6240
-      Width           =   6375
+      Top             =   3600
+      Width           =   3495
    End
    Begin VB.Label lblnombre 
       BackStyle       =   0  'Transparent
@@ -195,7 +231,7 @@ Begin VB.Form frmuso
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   1215
-      Left            =   9960
+      Left            =   12120
       TabIndex        =   0
       Top             =   360
       Width           =   10695
@@ -213,9 +249,9 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   975
-      Left            =   480
+      Left            =   840
       TabIndex        =   3
-      Top             =   4800
+      Top             =   6000
       Width           =   4815
    End
    Begin VB.Label Label2 
@@ -231,9 +267,9 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   480
+      Left            =   840
       TabIndex        =   1
-      Top             =   3360
+      Top             =   4800
       Width           =   4575
    End
 End
@@ -297,10 +333,12 @@ Private Sub Command2_Click()
 End Sub
 Private Sub Form_Load()
     Label1.ForeColor = RGB(69, 110, 174)
-    label2.ForeColor = RGB(69, 110, 174)
+    Label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)
     txtnombre.Text = Usuario
+    Label5.Caption = txtnombre.Text
     txtcantidad.Text = Cantidad
+    Label6.Caption = txtcantidad.Text
     lblnombre.Caption = Nombre
 End Sub
 

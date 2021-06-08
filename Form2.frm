@@ -4,16 +4,33 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form frmbuscar 
    BackColor       =   &H00FFFFC0&
    Caption         =   "Selección de reactivos y marcadores tumorales"
-   ClientHeight    =   7800
+   ClientHeight    =   8835
    ClientLeft      =   225
    ClientTop       =   570
    ClientWidth     =   16500
    LinkTopic       =   "Form2"
    Picture         =   "Form2.frx":0000
-   ScaleHeight     =   7800
+   ScaleHeight     =   8835
    ScaleWidth      =   16500
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton cmdusuarios 
+      Caption         =   "Añadir usuarios"
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   11520
+      TabIndex        =   15
+      Top             =   7800
+      Width           =   7935
+   End
    Begin VB.CommandButton Command3 
       BackColor       =   &H00FFFF80&
       Caption         =   "Eliminar"
@@ -27,7 +44,7 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   16920
+      Left            =   16800
       MaskColor       =   &H00000000&
       TabIndex        =   14
       Top             =   5400
@@ -44,10 +61,10 @@ Begin VB.Form frmbuscar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   14280
+      Height          =   735
+      Left            =   14160
       TabIndex        =   13
-      Top             =   7080
+      Top             =   6720
       Width           =   2175
    End
    Begin VB.CommandButton cmdregistrar 
@@ -81,9 +98,10 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   690
-      Left            =   11400
+      Left            =   9360
       TabIndex        =   11
-      Top             =   3720
+      Top             =   2160
+      Visible         =   0   'False
       Width           =   4815
    End
    Begin MSAdodcLib.Adodc Adodc2 
@@ -190,6 +208,7 @@ Begin VB.Form frmbuscar
       _ExtentX        =   18018
       _ExtentY        =   7646
       _Version        =   393216
+      ForeColor       =   -2147483646
       HeadLines       =   1
       RowHeight       =   38
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -257,10 +276,10 @@ Begin VB.Form frmbuscar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   690
+      Height          =   810
       Left            =   11520
       TabIndex        =   9
-      Top             =   6960
+      Top             =   6720
       Width           =   2175
    End
    Begin VB.TextBox txtbuscartexto 
@@ -275,9 +294,10 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   690
-      Left            =   360
+      Left            =   480
       TabIndex        =   8
-      Top             =   3720
+      Top             =   2400
+      Visible         =   0   'False
       Width           =   6615
    End
    Begin VB.TextBox txtmarca 
@@ -300,19 +320,19 @@ Begin VB.Form frmbuscar
    End
    Begin VB.TextBox txtcantidad 
       Height          =   285
-      Left            =   720
+      Left            =   240
       TabIndex        =   5
       Text            =   "Text2"
-      Top             =   4200
+      Top             =   840
       Visible         =   0   'False
       Width           =   1215
    End
    Begin VB.TextBox txtnombre 
       Height          =   375
-      Left            =   480
+      Left            =   600
       TabIndex        =   4
       Text            =   "Text1"
-      Top             =   3360
+      Top             =   1560
       Visible         =   0   'False
       Width           =   1455
    End
@@ -335,10 +355,49 @@ Begin VB.Form frmbuscar
       Top             =   5400
       Width           =   2175
    End
+   Begin VB.Label lblbuscar 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF8080&
+      Height          =   570
+      Left            =   7200
+      TabIndex        =   17
+      Top             =   3480
+      Width           =   6240
+   End
+   Begin VB.Label lblusuario 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Label4"
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF8080&
+      Height          =   570
+      Left            =   13320
+      TabIndex        =   16
+      Top             =   3480
+      Width           =   1350
+   End
    Begin VB.Label Label3 
       BackColor       =   &H00FFC0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "Seleccione un reactivo de la lista"
+      Caption         =   "Seleccione un reactivo de la lista:"
       BeginProperty Font 
          Name            =   "Yu Gothic"
          Size            =   21.75
@@ -352,13 +411,13 @@ Begin VB.Form frmbuscar
       Height          =   615
       Left            =   360
       TabIndex        =   3
-      Top             =   3000
+      Top             =   3480
       Width           =   7455
    End
    Begin VB.Label Label2 
       BackColor       =   &H00FFC0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "Quién usará el reactivo"
+      Caption         =   "Usuario:"
       BeginProperty Font 
          Name            =   "Yu Gothic"
          Size            =   21.75
@@ -372,7 +431,7 @@ Begin VB.Form frmbuscar
       Height          =   615
       Left            =   11400
       TabIndex        =   1
-      Top             =   3000
+      Top             =   3480
       Width           =   6255
    End
    Begin VB.Label Label1 
@@ -452,6 +511,19 @@ Private Sub cmdregistrar_Click()
     End If
 End Sub
 
+Private Sub cmdusuarios_Click()
+    If MsgBox("¿Desea añadir usuarios?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+        Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
+        Adodc2.Refresh
+        If Adodc2.Recordset.EOF Then
+            MsgBox "Solo administradores pueden añadir usuarios", vbInformation, "Laboratorios el Puente "
+        Else
+            Unload Me
+            frmdatos.Show
+            End If
+    End If
+End Sub
+
 Private Sub Command1_Click()
     If Len(Trim(txtbuscartexto.Text)) = 0 Then
         MsgBox "Seleccione un reactivo", vbInformation, "Laboratorios el Puente"
@@ -522,12 +594,16 @@ End Sub
 
 Private Sub DataGrid1_Click()
     txtbuscartexto.Text = DataGrid1.Columns(1).Text
+    lblbuscar.Caption = DataGrid1.Columns(1).Text
 End Sub
 
 Private Sub Form_Load()
     Label3.ForeColor = RGB(69, 110, 174)
-    label2.ForeColor = RGB(69, 110, 174)
+    Label2.ForeColor = RGB(69, 110, 174)
+    lblusuario.ForeColor = RGB(69, 110, 174)
+    lblusuario.ForeColor = RGB(69, 110, 174)
     txtusuario.Text = Usuario
+    lblusuario.Caption = txtusuario.Text
     TablaReactivos
     formato
 End Sub
@@ -538,4 +614,6 @@ Sub formato()
     DataGrid1.Columns(3).Width = 3500
     DataGrid1.Columns(4).Width = 3500
     DataGrid1.Columns(5).Width = 0
+    DataGrid1.ForeColor = RGB(69, 110, 174)
 End Sub
+

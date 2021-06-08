@@ -5,7 +5,7 @@ Global cn As New ADODB.Connection
 Global rsReactivos As New ADODB.Recordset
 Global rsRegistro As New ADODB.Recordset
 Global rsUsuarios As New ADODB.Recordset
-
+Global rsAdministrador As New ADODB.Recordset
 Sub main()
     With cn
         .Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & "\Laboratorio.mdb;Persist Security Info=False"
@@ -39,3 +39,13 @@ Sub Usuarios()
         .Open "select * from Doctores", cn
     End With
 End Sub
+Sub Administrador()
+    With rsAdministrador
+        If .State = 1 Then .Close
+        .Source = "Administrador"
+        .CursorType = adOpenKeyset
+        .LockType = adLockOptimistic
+        .Open "select * from Administrador", cn
+    End With
+End Sub
+

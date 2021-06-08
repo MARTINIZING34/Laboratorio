@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin VB.Form frmregistrar 
    Caption         =   "Registrar reactivos"
-   ClientHeight    =   8595
+   ClientHeight    =   10365
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   16350
+   ClientWidth     =   17745
    LinkTopic       =   "Form1"
    Picture         =   "frmregistrar.frx":0000
-   ScaleHeight     =   8595
-   ScaleWidth      =   16350
+   ScaleHeight     =   10365
+   ScaleWidth      =   17745
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command2 
@@ -365,7 +365,7 @@ Private Sub Form_Load()
         txtcantidad.Enabled = True
     End If
     lblnombre.ForeColor = RGB(69, 110, 174)
-    Label2.ForeColor = RGB(69, 110, 174)
+    label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)
     Label4.ForeColor = RGB(69, 110, 174)
     Label5.ForeColor = RGB(69, 110, 174)
