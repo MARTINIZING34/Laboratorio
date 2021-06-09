@@ -285,17 +285,6 @@ Private Sub Command1_Click()
         If txtnombre.Text = "" Then
                 MsgBox "Seleccione un nombre", vbInformation, "Laboratorios el Puente"
         Else
-            'TablaRegistro_Uso
-            'With rsRegistro
-                '.Requery
-                '.AddNew
-                '!Doctor_ID = Val(txtnombre.Text)
-                '!Identificador = Val(rsReactivos!Identificador)
-                'rsRegistro.Fields("Doctor_ID") = txtnombre.Text
-                'rsRegistro ("Doctor_ID") = val(
-                'rsRegistro("Identificador") = Val(rsReactivos!Identificador)
-                '.UpdateBatch
-            'End With
             If Not (IsNumeric(txtcantidadutilizar.Text)) Then
                 MsgBox "Ingrese la cantidad en números", vbInformation, "Laboratorios el Puente"
                 txtcantidadutilizar.Text = ""

@@ -10,12 +10,29 @@ Begin VB.Form frmbuscar
    ClientWidth     =   16500
    LinkTopic       =   "Form2"
    Picture         =   "Form2.frx":0000
-   ScaleHeight     =   8835
-   ScaleWidth      =   16500
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command4 
+      Caption         =   "Reportes"
+      BeginProperty Font 
+         Name            =   "Yu Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   14160
+      TabIndex        =   18
+      Top             =   7320
+      Width           =   2175
+   End
    Begin VB.CommandButton cmdusuarios 
-      Caption         =   "Añadir usuarios"
+      Caption         =   "Administrar usuarios"
       BeginProperty Font 
          Name            =   "Yu Gothic"
          Size            =   21.75
@@ -26,10 +43,10 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   11520
+      Left            =   16560
       TabIndex        =   15
-      Top             =   7800
-      Width           =   7935
+      Top             =   7440
+      Width           =   3495
    End
    Begin VB.CommandButton Command3 
       BackColor       =   &H00FFFF80&
@@ -44,10 +61,10 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   16800
+      Left            =   15960
       MaskColor       =   &H00000000&
       TabIndex        =   14
-      Top             =   5400
+      Top             =   5520
       Width           =   2175
    End
    Begin VB.CommandButton cmdmodificar 
@@ -62,9 +79,9 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   14160
+      Left            =   18120
       TabIndex        =   13
-      Top             =   6720
+      Top             =   5520
       Width           =   2175
    End
    Begin VB.CommandButton cmdregistrar 
@@ -80,7 +97,7 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   14160
+      Left            =   13320
       MaskColor       =   &H00000000&
       TabIndex        =   12
       Top             =   5400
@@ -106,8 +123,8 @@ Begin VB.Form frmbuscar
    End
    Begin MSAdodcLib.Adodc Adodc2 
       Height          =   615
-      Left            =   1200
-      Top             =   6240
+      Left            =   960
+      Top             =   6360
       Visible         =   0   'False
       Width           =   1815
       _ExtentX        =   3201
@@ -203,7 +220,7 @@ Begin VB.Form frmbuscar
       Height          =   4335
       Left            =   360
       TabIndex        =   10
-      Top             =   4560
+      Top             =   4440
       Width           =   10215
       _ExtentX        =   18018
       _ExtentY        =   7646
@@ -212,8 +229,8 @@ Begin VB.Form frmbuscar
       HeadLines       =   1
       RowHeight       =   38
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Yu Gothic"
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -277,9 +294,9 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   810
-      Left            =   11520
+      Left            =   11760
       TabIndex        =   9
-      Top             =   6720
+      Top             =   7320
       Width           =   2175
    End
    Begin VB.TextBox txtbuscartexto 
@@ -349,11 +366,35 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   11520
+      Left            =   10680
       MaskColor       =   &H00000000&
       TabIndex        =   2
       Top             =   5400
       Width           =   2175
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   "Productos"
+      Height          =   3375
+      Left            =   10800
+      TabIndex        =   19
+      Top             =   4920
+      Width           =   3375
+   End
+   Begin VB.Frame Frame2 
+      Caption         =   "Gestión"
+      Height          =   2175
+      Left            =   14640
+      TabIndex        =   20
+      Top             =   7080
+      Width           =   5295
+      Begin VB.CommandButton Command5 
+         Caption         =   "Cambiar usuario"
+         Height          =   375
+         Left            =   840
+         TabIndex        =   21
+         Top             =   1320
+         Width           =   1815
+      End
    End
    Begin VB.Label lblbuscar 
       AutoSize        =   -1  'True
@@ -512,7 +553,7 @@ Private Sub cmdregistrar_Click()
 End Sub
 
 Private Sub cmdusuarios_Click()
-    If MsgBox("¿Desea añadir usuarios?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+    If MsgBox("¿Desea administrar usuarios?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
         Adodc2.RecordSource = "select * from Administrador where Nombre =  '" + txtusuario.Text + "'"
         Adodc2.Refresh
         If Adodc2.Recordset.EOF Then
@@ -592,6 +633,20 @@ End If
 
 End Sub
 
+Private Sub Command4_Click()
+    If MsgBox("¿Desea visualizar los reportes de uso?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+                        DataReport1.Show
+                    End If
+    
+End Sub
+
+Private Sub Command5_Click()
+    If MsgBox("¿Desea cambiar de usuario?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+        frminicio.Show
+        Unload Me
+    End If
+End Sub
+
 Private Sub DataGrid1_Click()
     txtbuscartexto.Text = DataGrid1.Columns(1).Text
     lblbuscar.Caption = DataGrid1.Columns(1).Text
@@ -609,10 +664,10 @@ Private Sub Form_Load()
 End Sub
 Sub formato()
     DataGrid1.Columns(0).Width = 0
-    DataGrid1.Columns(1).Width = 1300
-    DataGrid1.Columns(2).Width = 1300
-    DataGrid1.Columns(3).Width = 3500
-    DataGrid1.Columns(4).Width = 3500
+    DataGrid1.Columns(1).Width = 2300
+    DataGrid1.Columns(2).Width = 2300
+    DataGrid1.Columns(3).Width = 2500
+    DataGrid1.Columns(4).Width = 2500
     DataGrid1.Columns(5).Width = 0
     DataGrid1.ForeColor = RGB(69, 110, 174)
 End Sub

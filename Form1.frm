@@ -61,26 +61,6 @@ Begin VB.Form frminicio
       EndProperty
       _Version        =   393216
    End
-   Begin VB.CommandButton cmdsalir 
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      Caption         =   "Salir"
-      BeginProperty Font 
-         Name            =   "Yu Gothic"
-         Size            =   26.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   735
-      Left            =   15960
-      Style           =   1  'Graphical
-      TabIndex        =   3
-      Top             =   8400
-      Width           =   2175
-   End
    Begin VB.TextBox txtcontraseña 
       BeginProperty Font 
          Name            =   "Yu Gothic"
@@ -93,31 +73,12 @@ Begin VB.Form frminicio
       EndProperty
       ForeColor       =   &H0000FF00&
       Height          =   690
+      IMEMode         =   3  'DISABLE
       Left            =   15240
-      TabIndex        =   2
+      PasswordChar    =   "*"
+      TabIndex        =   1
       Top             =   6960
       Width           =   3135
-   End
-   Begin VB.CommandButton cmdingresar 
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      Caption         =   "Ingresar"
-      BeginProperty Font 
-         Name            =   "Yu Gothic"
-         Size            =   26.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   675
-      Left            =   11760
-      MaskColor       =   &H0000FFFF&
-      Style           =   1  'Graphical
-      TabIndex        =   1
-      Top             =   8400
-      Width           =   2295
    End
    Begin VB.TextBox txtusuario 
       BeginProperty Font 
@@ -136,6 +97,18 @@ Begin VB.Form frminicio
       Top             =   4200
       Width           =   3135
    End
+   Begin VB.Image Image2 
+      Height          =   1215
+      Left            =   15840
+      Top             =   8400
+      Width           =   2895
+   End
+   Begin VB.Image Image1 
+      Height          =   1215
+      Left            =   11520
+      Top             =   8400
+      Width           =   2895
+   End
 End
 Attribute VB_Name = "frminicio"
 Attribute VB_GlobalNameSpace = False
@@ -143,32 +116,47 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Sub cmdingresar_Click()
 
-'Verificación de usuario y contraseña
+
+
+Private Sub Form_Load()
+    txtusuario.ForeColor = RGB(69, 110, 174)
+    txtcontraseña.ForeColor = RGB(69, 110, 174)
+    Image1.Picture = LoadPicture(App.Path & "/ingresar.jpg")
+    Image2.Picture = LoadPicture(App.Path & "/salir.jpg")
+End Sub
+
+
+
+Private Sub Image1_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Image1.Picture = LoadPicture(App.Path & "/ingresar2.jpg")
+    
+    
+End Sub
+
+Private Sub Image1_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Image1.Picture = LoadPicture(App.Path & "/ingresar.jpg")
+    'Verificación de usuario y contraseña
 
 Adodc1.RecordSource = "select * from Doctores where Nombre = '" + txtusuario.Text + "' and Contraseña = '" + txtcontraseña.Text + "'"
 Adodc1.Refresh
 If Adodc1.Recordset.EOF Then
     MsgBox "Revise sus datos y vuelva a intentarlo", vbInformation, "Laboratorios el Puente "
 Else
-    
-    'Usuarios
-    'Adodc1.Find "Doctor_ID = '" & txtid.Text & "'", , , 1
-    'txtid.Text = Adodc1.Fields("Doctor_ID")
     Usuario = txtusuario.Text
     frmbuscar.Show
     Unload Me
 End If
 End Sub
 
-Private Sub cmdsalir_Click()
-    If MsgBox("¿Desea salir?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
-        Unload Me
-    End If
-End Sub
-Private Sub Form_Load()
-    txtusuario.ForeColor = RGB(69, 110, 174)
-    txtcontraseña.ForeColor = RGB(69, 110, 174)
+
+Private Sub Image2_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Image2.Picture = LoadPicture(App.Path & "/salir2.jpg")
 End Sub
 
+Private Sub Image2_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Image2.Picture = LoadPicture(App.Path & "/salir.jpg")
+If MsgBox("¿Desea salir?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+    Unload Me
+End If
+End Sub

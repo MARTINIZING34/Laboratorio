@@ -33,7 +33,7 @@ End Sub
 Sub Usuarios()
     With rsUsuarios
         If .State = 1 Then .Close
-        .Source = "Reactivos"
+        '.Source = "Reactivos"
         .CursorType = adOpenKeyset
         .LockType = adLockOptimistic
         .Open "select * from Doctores", cn
