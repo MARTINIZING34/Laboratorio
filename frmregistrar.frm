@@ -14,7 +14,7 @@ Begin VB.Form frmregistrar
    Begin VB.CommandButton Command2 
       Caption         =   "Salir"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -23,15 +23,15 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   810
-      Left            =   15480
+      Left            =   13800
       TabIndex        =   12
       Top             =   6000
-      Width           =   2535
+      Width           =   3015
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Guardar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -40,10 +40,10 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   810
-      Left            =   10560
+      Left            =   13800
       TabIndex        =   11
-      Top             =   6000
-      Width           =   2535
+      Top             =   4680
+      Width           =   3015
    End
    Begin VB.TextBox txtcantidadregistrar 
       BeginProperty Font 
@@ -56,14 +56,14 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   10080
+      Left            =   9960
       TabIndex        =   10
-      Top             =   4800
+      Top             =   2520
       Width           =   8655
    End
    Begin VB.TextBox txtmarca 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -71,8 +71,9 @@ Begin VB.Form frmregistrar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   495
-      Left            =   5520
+      Left            =   7320
       TabIndex        =   8
       Text            =   "Text4"
       Top             =   7680
@@ -80,7 +81,7 @@ Begin VB.Form frmregistrar
    End
    Begin VB.TextBox txtfecha 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -88,8 +89,9 @@ Begin VB.Form frmregistrar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   525
-      Left            =   5520
+      Left            =   7320
       TabIndex        =   7
       Text            =   "Text3"
       Top             =   6240
@@ -98,7 +100,7 @@ Begin VB.Form frmregistrar
    Begin VB.TextBox txtcantidad 
       Enabled         =   0   'False
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -106,8 +108,9 @@ Begin VB.Form frmregistrar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   495
-      Left            =   5520
+      Left            =   7320
       TabIndex        =   6
       Text            =   "Text2"
       Top             =   4800
@@ -115,7 +118,7 @@ Begin VB.Form frmregistrar
    End
    Begin VB.TextBox txtnombre 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -123,8 +126,9 @@ Begin VB.Form frmregistrar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   525
-      Left            =   5520
+      Left            =   7320
       TabIndex        =   5
       Text            =   "Text1"
       Top             =   3360
@@ -143,7 +147,7 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   9960
+      Left            =   11760
       TabIndex        =   9
       Top             =   3120
       Width           =   9735
@@ -152,7 +156,7 @@ Begin VB.Form frmregistrar
       BackStyle       =   0  'Transparent
       Caption         =   "Marca:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -161,7 +165,7 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   360
+      Left            =   2160
       TabIndex        =   4
       Top             =   7680
       Width           =   4455
@@ -170,7 +174,7 @@ Begin VB.Form frmregistrar
       BackStyle       =   0  'Transparent
       Caption         =   "Fecha de expiración:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -179,7 +183,7 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   360
+      Left            =   2160
       TabIndex        =   3
       Top             =   6240
       Width           =   4575
@@ -188,7 +192,7 @@ Begin VB.Form frmregistrar
       BackStyle       =   0  'Transparent
       Caption         =   "Cantidad restante:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -197,7 +201,7 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   360
+      Left            =   2160
       TabIndex        =   2
       Top             =   4800
       Width           =   4335
@@ -206,7 +210,7 @@ Begin VB.Form frmregistrar
       BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -215,7 +219,7 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   360
+      Left            =   2160
       TabIndex        =   1
       Top             =   3360
       Width           =   4455
@@ -224,10 +228,10 @@ Begin VB.Form frmregistrar
       BackStyle       =   0  'Transparent
       Caption         =   "Registro de reactivos"
       BeginProperty Font 
-         Name            =   "Yu Gothic Light"
+         Name            =   "Century Gothic"
          Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -236,7 +240,7 @@ Begin VB.Form frmregistrar
       Height          =   1215
       Left            =   5640
       TabIndex        =   0
-      Top             =   360
+      Top             =   120
       Width           =   10215
    End
 End
@@ -354,6 +358,7 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Form_Load()
+Me.Icon = LoadPicture(App.Path & "/logo5.ico")
     If Verificar = 0 Then
         txtcantidad.Enabled = True
         Label5.Visible = False
@@ -365,7 +370,7 @@ Private Sub Form_Load()
         txtcantidad.Enabled = True
     End If
     lblnombre.ForeColor = RGB(69, 110, 174)
-    label2.ForeColor = RGB(69, 110, 174)
+    Label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)
     Label4.ForeColor = RGB(69, 110, 174)
     Label5.ForeColor = RGB(69, 110, 174)

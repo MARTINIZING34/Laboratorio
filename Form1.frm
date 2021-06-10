@@ -8,8 +8,9 @@ Begin VB.Form frminicio
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   20250
+   Icon            =   "Form1.frx":0000
    LinkTopic       =   "Form1"
-   Picture         =   "Form1.frx":0000
+   Picture         =   "Form1.frx":2872A
    ScaleHeight     =   9375
    ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
@@ -41,8 +42,8 @@ Begin VB.Form frminicio
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"Form1.frx":2E7D8
-      OLEDBString     =   $"Form1.frx":2E860
+      Connect         =   $"Form1.frx":56F02
+      OLEDBString     =   $"Form1.frx":56F8A
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -63,8 +64,8 @@ Begin VB.Form frminicio
    End
    Begin VB.TextBox txtcontraseña 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
-         Size            =   21.75
+         Name            =   "Century Gothic"
+         Size            =   27.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -82,8 +83,8 @@ Begin VB.Form frminicio
    End
    Begin VB.TextBox txtusuario 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
-         Size            =   21.75
+         Name            =   "Century Gothic"
+         Size            =   27.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -124,6 +125,7 @@ Private Sub Form_Load()
     txtcontraseña.ForeColor = RGB(69, 110, 174)
     Image1.Picture = LoadPicture(App.Path & "/ingresar.jpg")
     Image2.Picture = LoadPicture(App.Path & "/salir.jpg")
+    Me.Icon = LoadPicture(App.Path & "/logo5.ico")
 End Sub
 
 

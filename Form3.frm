@@ -25,7 +25,7 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   525
-      Left            =   8040
+      Left            =   8640
       TabIndex        =   8
       Top             =   2400
       Visible         =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmuso
    Begin VB.CommandButton Command2 
       Caption         =   "Salir"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -90,7 +90,7 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   12240
+      Left            =   13560
       TabIndex        =   6
       Top             =   5040
       Width           =   2775
@@ -98,7 +98,7 @@ Begin VB.Form frmuso
    Begin VB.CommandButton Command1 
       Caption         =   "Usar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -107,7 +107,7 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   12240
+      Left            =   13560
       TabIndex        =   5
       Top             =   3720
       Width           =   2775
@@ -122,8 +122,9 @@ Begin VB.Form frmuso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00808080&
       Height          =   495
-      Left            =   5160
+      Left            =   6960
       TabIndex        =   4
       Top             =   6000
       Width           =   3255
@@ -140,7 +141,7 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7560
+      Left            =   8880
       TabIndex        =   2
       Top             =   4200
       Visible         =   0   'False
@@ -149,7 +150,7 @@ Begin VB.Form frmuso
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -157,8 +158,9 @@ Begin VB.Form frmuso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   495
-      Left            =   5160
+      Left            =   6960
       TabIndex        =   11
       Top             =   4800
       Width           =   1695
@@ -166,7 +168,7 @@ Begin VB.Form frmuso
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -174,8 +176,9 @@ Begin VB.Form frmuso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   495
-      Left            =   5160
+      Left            =   6960
       TabIndex        =   10
       Top             =   3600
       Width           =   2295
@@ -184,26 +187,26 @@ Begin VB.Form frmuso
       BackStyle       =   0  'Transparent
       Caption         =   "Nombre del reactivo:"
       BeginProperty Font 
-         Name            =   "Yu Gothic Light"
+         Name            =   "Century Gothic"
          Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   1215
-      Left            =   3000
+      Left            =   3720
       TabIndex        =   9
-      Top             =   360
+      Top             =   120
       Width           =   10695
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
       Caption         =   "Usuario:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -212,35 +215,35 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1095
-      Left            =   840
+      Left            =   2640
       TabIndex        =   7
       Top             =   3600
-      Width           =   3495
+      Width           =   2895
    End
    Begin VB.Label lblnombre 
       BackStyle       =   0  'Transparent
       Caption         =   "Nombre del reactivo"
       BeginProperty Font 
-         Name            =   "Yu Gothic Light"
+         Name            =   "Century Gothic"
          Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   1215
-      Left            =   12120
+      Left            =   14280
       TabIndex        =   0
-      Top             =   360
+      Top             =   120
       Width           =   10695
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
       Caption         =   "Cantidad a utilizar:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -249,7 +252,7 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   975
-      Left            =   840
+      Left            =   2640
       TabIndex        =   3
       Top             =   6000
       Width           =   4815
@@ -258,7 +261,7 @@ Begin VB.Form frmuso
       BackStyle       =   0  'Transparent
       Caption         =   "Cantidad:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -267,10 +270,10 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   840
+      Left            =   2640
       TabIndex        =   1
       Top             =   4800
-      Width           =   4575
+      Width           =   3975
    End
 End
 Attribute VB_Name = "frmuso"
@@ -321,6 +324,7 @@ Private Sub Command2_Click()
     End If
 End Sub
 Private Sub Form_Load()
+Me.Icon = LoadPicture(App.Path & "/logo5.ico")
     Label1.ForeColor = RGB(69, 110, 174)
     Label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)

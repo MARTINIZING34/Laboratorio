@@ -10,37 +10,57 @@ Begin VB.Form frmdatos
    ClientWidth     =   10845
    LinkTopic       =   "Form1"
    Picture         =   "frmdatos.frx":0000
-   ScaleHeight     =   4560
-   ScaleWidth      =   10845
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton cmdeliminar 
       Caption         =   "Eliminar"
-      Height          =   495
-      Left            =   8160
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   14040
       TabIndex        =   16
-      Top             =   8880
-      Width           =   2775
+      Top             =   7080
+      Width           =   4095
    End
    Begin VB.CommandButton cmdguardar 
       Caption         =   "Guardar"
-      Height          =   615
-      Left            =   4200
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   660
+      Left            =   10200
       TabIndex        =   15
-      Top             =   8880
-      Width           =   3255
+      Top             =   7080
+      Width           =   3495
    End
    Begin VB.TextBox txtbuscartexto 
       Height          =   975
       Left            =   1080
       TabIndex        =   14
       Top             =   1200
+      Visible         =   0   'False
       Width           =   1935
    End
    Begin MSAdodcLib.Adodc Adodc2 
       Height          =   615
-      Left            =   16440
-      Top             =   8520
+      Left            =   16680
+      Top             =   600
+      Visible         =   0   'False
       Width           =   1200
       _ExtentX        =   2117
       _ExtentY        =   1085
@@ -86,7 +106,7 @@ Begin VB.Form frmdatos
    Begin VB.CommandButton cmdmodificar 
       Caption         =   "Modificar usuario"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -95,15 +115,16 @@ Begin VB.Form frmdatos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   4080
+      Left            =   14040
       TabIndex        =   12
-      Top             =   8040
+      Top             =   6240
       Width           =   4095
    End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   735
-      Left            =   13320
-      Top             =   8760
+      Left            =   18480
+      Top             =   600
+      Visible         =   0   'False
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   1296
@@ -149,17 +170,17 @@ Begin VB.Form frmdatos
    Begin MSDataGridLib.DataGrid DataGrid1 
       Bindings        =   "frmdatos.frx":B4E0
       Height          =   3015
-      Left            =   8760
+      Left            =   9000
       TabIndex        =   11
-      Top             =   2280
-      Width           =   8535
-      _ExtentX        =   15055
+      Top             =   3000
+      Width           =   10095
+      _ExtentX        =   17806
       _ExtentY        =   5318
       _Version        =   393216
       HeadLines       =   1
-      RowHeight       =   38
+      RowHeight       =   35
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   12
          Charset         =   0
          Weight          =   400
@@ -168,7 +189,7 @@ Begin VB.Form frmdatos
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -213,7 +234,7 @@ Begin VB.Form frmdatos
    End
    Begin VB.ComboBox Combo1 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -221,9 +242,10 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   690
+      ForeColor       =   &H00404040&
+      Height          =   660
       ItemData        =   "frmdatos.frx":B4F5
-      Left            =   4080
+      Left            =   4800
       List            =   "frmdatos.frx":B4FF
       TabIndex        =   10
       Top             =   6720
@@ -232,7 +254,7 @@ Begin VB.Form frmdatos
    Begin VB.CommandButton Command2 
       Caption         =   "Salir"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -240,16 +262,16 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   720
+      Height          =   690
+      Left            =   12000
       TabIndex        =   9
-      Top             =   8880
-      Width           =   2775
+      Top             =   8280
+      Width           =   3855
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Añadir usuario"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -258,14 +280,14 @@ Begin VB.Form frmdatos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   720
+      Left            =   10200
       TabIndex        =   8
-      Top             =   8040
-      Width           =   3135
+      Top             =   6240
+      Width           =   3495
    End
    Begin VB.TextBox txtedad 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -273,15 +295,16 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   690
-      Left            =   4080
+      Left            =   4800
       TabIndex        =   7
       Top             =   5400
       Width           =   3495
    End
    Begin VB.TextBox txtcontraseña 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -289,15 +312,16 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   690
-      Left            =   4080
+      Left            =   4800
       TabIndex        =   6
       Top             =   4200
       Width           =   3495
    End
    Begin VB.TextBox txtnombre 
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -305,8 +329,9 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00404040&
       Height          =   690
-      Left            =   4080
+      Left            =   4800
       TabIndex        =   5
       Top             =   3000
       Width           =   3495
@@ -314,17 +339,18 @@ Begin VB.Form frmdatos
    Begin MSDataGridLib.DataGrid DataGrid2 
       Bindings        =   "frmdatos.frx":B51A
       Height          =   3015
-      Left            =   8760
+      Left            =   9000
       TabIndex        =   13
-      Top             =   5520
-      Width           =   8535
-      _ExtentX        =   15055
+      Top             =   1560
+      Visible         =   0   'False
+      Width           =   10095
+      _ExtentX        =   17806
       _ExtentY        =   5318
       _Version        =   393216
       HeadLines       =   1
-      RowHeight       =   38
+      RowHeight       =   35
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   12
          Charset         =   0
          Weight          =   400
@@ -333,7 +359,7 @@ Begin VB.Form frmdatos
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -381,7 +407,7 @@ Begin VB.Form frmdatos
       BackStyle       =   0  'Transparent
       Caption         =   "Nombre:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -389,18 +415,18 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   240
+      Height          =   540
+      Left            =   960
       TabIndex        =   1
       Top             =   3120
-      Width           =   1725
+      Width           =   1845
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Contraseña:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -408,18 +434,18 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   240
+      Height          =   540
+      Left            =   960
       TabIndex        =   2
       Top             =   4320
-      Width           =   2430
+      Width           =   2625
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Tipo de cuenta:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -427,18 +453,18 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   240
+      Height          =   540
+      Left            =   960
       TabIndex        =   3
       Top             =   6720
-      Width           =   3105
+      Width           =   3375
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Edad:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -446,31 +472,31 @@ Begin VB.Form frmdatos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   570
-      Left            =   240
+      Height          =   540
+      Left            =   960
       TabIndex        =   4
       Top             =   5520
-      Width           =   1140
+      Width           =   1245
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Administrar usuarios"
       BeginProperty Font 
-         Name            =   "Yu Gothic Light"
+         Name            =   "Century Gothic"
          Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
-      Height          =   1230
+      Height          =   1170
       Left            =   6240
       TabIndex        =   0
-      Top             =   240
-      Width           =   8445
+      Top             =   0
+      Width           =   9135
    End
 End
 Attribute VB_Name = "frmdatos"
@@ -810,6 +836,7 @@ Private Sub DataGrid1_Click()
 End Sub
 
 Private Sub Form_Load()
+Me.Icon = LoadPicture(App.Path & "/logo5.ico")
     Label2.ForeColor = RGB(69, 110, 174)
     Label3.ForeColor = RGB(69, 110, 174)
     Label4.ForeColor = RGB(69, 110, 174)
@@ -833,6 +860,6 @@ Sub formato2()
     DataGrid2.Columns(1).Width = 2300
     DataGrid2.Columns(2).Width = 2300
     DataGrid2.Columns(3).Width = 2500
-    DataGrid2.Columns(4).Width = 2500
+    DataGrid2.Columns(4).Width = 0
     DataGrid2.ForeColor = RGB(69, 110, 174)
 End Sub

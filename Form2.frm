@@ -10,14 +10,14 @@ Begin VB.Form frmbuscar
    ClientWidth     =   16500
    LinkTopic       =   "Form2"
    Picture         =   "Form2.frx":0000
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8835
+   ScaleWidth      =   16500
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command4 
       Caption         =   "Reportes"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -26,15 +26,15 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   14160
+      Left            =   14400
       TabIndex        =   18
-      Top             =   7320
-      Width           =   2175
+      Top             =   6240
+      Width           =   2295
    End
    Begin VB.CommandButton cmdusuarios 
       Caption         =   "Administrar usuarios"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -43,16 +43,16 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   16560
+      Left            =   12000
       TabIndex        =   15
-      Top             =   7440
-      Width           =   3495
+      Top             =   7560
+      Width           =   7095
    End
    Begin VB.CommandButton Command3 
       BackColor       =   &H00FFFF80&
       Caption         =   "Eliminar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -61,16 +61,16 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   15960
+      Left            =   16800
       MaskColor       =   &H00000000&
       TabIndex        =   14
-      Top             =   5520
-      Width           =   2175
+      Top             =   4920
+      Width           =   2295
    End
    Begin VB.CommandButton cmdmodificar 
       Caption         =   "Modificar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -79,16 +79,16 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   18120
+      Left            =   12000
       TabIndex        =   13
-      Top             =   5520
-      Width           =   2175
+      Top             =   6240
+      Width           =   2295
    End
    Begin VB.CommandButton cmdregistrar 
       BackColor       =   &H00FFFF80&
       Caption         =   "Registrar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -97,11 +97,11 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   13320
+      Left            =   14400
       MaskColor       =   &H00000000&
       TabIndex        =   12
-      Top             =   5400
-      Width           =   2175
+      Top             =   4920
+      Width           =   2295
    End
    Begin VB.TextBox txtusuario 
       Enabled         =   0   'False
@@ -227,9 +227,9 @@ Begin VB.Form frmbuscar
       _Version        =   393216
       ForeColor       =   -2147483646
       HeadLines       =   1
-      RowHeight       =   38
+      RowHeight       =   35
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   12
          Charset         =   0
          Weight          =   400
@@ -238,7 +238,7 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -285,7 +285,7 @@ Begin VB.Form frmbuscar
       BackColor       =   &H00FFFF80&
       Caption         =   "Salir"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -293,11 +293,11 @@ Begin VB.Form frmbuscar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   810
-      Left            =   11760
+      Height          =   690
+      Left            =   16800
       TabIndex        =   9
-      Top             =   7320
-      Width           =   2175
+      Top             =   6240
+      Width           =   2295
    End
    Begin VB.TextBox txtbuscartexto 
       Enabled         =   0   'False
@@ -357,7 +357,7 @@ Begin VB.Form frmbuscar
       BackColor       =   &H00FFFF80&
       Caption         =   "Utilizar"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -366,41 +366,17 @@ Begin VB.Form frmbuscar
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   10680
+      Left            =   12000
       MaskColor       =   &H00000000&
       TabIndex        =   2
-      Top             =   5400
-      Width           =   2175
-   End
-   Begin VB.Frame Frame1 
-      Caption         =   "Productos"
-      Height          =   3375
-      Left            =   10800
-      TabIndex        =   19
       Top             =   4920
-      Width           =   3375
-   End
-   Begin VB.Frame Frame2 
-      Caption         =   "Gestión"
-      Height          =   2175
-      Left            =   14640
-      TabIndex        =   20
-      Top             =   7080
-      Width           =   5295
-      Begin VB.CommandButton Command5 
-         Caption         =   "Cambiar usuario"
-         Height          =   375
-         Left            =   840
-         TabIndex        =   21
-         Top             =   1320
-         Width           =   1815
-      End
+      Width           =   2295
    End
    Begin VB.Label lblbuscar 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -408,19 +384,19 @@ Begin VB.Form frmbuscar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00FF8080&
-      Height          =   570
-      Left            =   7200
+      ForeColor       =   &H00808080&
+      Height          =   540
+      Left            =   8400
       TabIndex        =   17
       Top             =   3480
-      Width           =   6240
+      Width           =   120
    End
    Begin VB.Label lblusuario 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Label4"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -428,19 +404,19 @@ Begin VB.Form frmbuscar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00FF8080&
-      Height          =   570
-      Left            =   13320
+      ForeColor       =   &H00808080&
+      Height          =   540
+      Left            =   14160
       TabIndex        =   16
       Top             =   3480
-      Width           =   1350
+      Width           =   1410
    End
    Begin VB.Label Label3 
       BackColor       =   &H00FFC0C0&
       BackStyle       =   0  'Transparent
       Caption         =   "Seleccione un reactivo de la lista:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -460,7 +436,7 @@ Begin VB.Form frmbuscar
       BackStyle       =   0  'Transparent
       Caption         =   "Usuario:"
       BeginProperty Font 
-         Name            =   "Yu Gothic"
+         Name            =   "Century Gothic"
          Size            =   21.75
          Charset         =   0
          Weight          =   400
@@ -470,7 +446,7 @@ Begin VB.Form frmbuscar
       EndProperty
       ForeColor       =   &H8000000D&
       Height          =   615
-      Left            =   11400
+      Left            =   12240
       TabIndex        =   1
       Top             =   3480
       Width           =   6255
@@ -480,20 +456,20 @@ Begin VB.Form frmbuscar
       BackStyle       =   0  'Transparent
       Caption         =   "Hormonas y marcadores tumorales"
       BeginProperty Font 
-         Name            =   "@Yu Gothic Light"
+         Name            =   "Century Gothic"
          Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   1695
-      Left            =   3000
+      Left            =   2040
       TabIndex        =   0
-      Top             =   360
-      Width           =   16095
+      Top             =   0
+      Width           =   16695
    End
 End
 Attribute VB_Name = "frmbuscar"
@@ -653,10 +629,12 @@ Private Sub DataGrid1_Click()
 End Sub
 
 Private Sub Form_Load()
+Me.Icon = LoadPicture(App.Path & "/logo5.ico")
     Label3.ForeColor = RGB(69, 110, 174)
     Label2.ForeColor = RGB(69, 110, 174)
-    lblusuario.ForeColor = RGB(69, 110, 174)
-    lblusuario.ForeColor = RGB(69, 110, 174)
+    'lblbuscar.ForeColor = RGB(69, 110, 174)
+    'lblusuario.ForeColor = RGB(69, 110, 174)
+    'lblusuario.ForeColor = RGB(69, 110, 174)
     txtusuario.Text = Usuario
     lblusuario.Caption = txtusuario.Text
     TablaReactivos
