@@ -15,7 +15,7 @@ Begin VB.Form frmregistrar
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -32,7 +32,7 @@ Begin VB.Form frmregistrar
       Caption         =   "Guardar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -72,11 +72,11 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00404040&
-      Height          =   495
+      Height          =   660
       Left            =   7320
       TabIndex        =   8
       Text            =   "Text4"
-      Top             =   7680
+      Top             =   7560
       Width           =   3015
    End
    Begin VB.TextBox txtfecha 
@@ -90,11 +90,11 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00404040&
-      Height          =   525
+      Height          =   660
       Left            =   7320
       TabIndex        =   7
       Text            =   "Text3"
-      Top             =   6240
+      Top             =   6120
       Width           =   3015
    End
    Begin VB.TextBox txtcantidad 
@@ -109,12 +109,12 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00404040&
-      Height          =   495
+      Height          =   660
       Left            =   7320
       TabIndex        =   6
       Text            =   "Text2"
-      Top             =   4800
-      Width           =   3015
+      Top             =   4680
+      Width           =   2895
    End
    Begin VB.TextBox txtnombre 
       BeginProperty Font 
@@ -127,11 +127,11 @@ Begin VB.Form frmregistrar
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00404040&
-      Height          =   525
+      Height          =   660
       Left            =   7320
       TabIndex        =   5
       Text            =   "Text1"
-      Top             =   3360
+      Top             =   3240
       Width           =   3015
    End
    Begin VB.Label Label5 

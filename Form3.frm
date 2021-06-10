@@ -82,7 +82,7 @@ Begin VB.Form frmuso
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -99,7 +99,7 @@ Begin VB.Form frmuso
       Caption         =   "Usar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -123,10 +123,10 @@ Begin VB.Form frmuso
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00808080&
-      Height          =   495
+      Height          =   690
       Left            =   6960
       TabIndex        =   4
-      Top             =   6000
+      Top             =   5880
       Width           =   3255
    End
    Begin VB.TextBox txtcantidad 

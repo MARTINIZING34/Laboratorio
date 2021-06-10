@@ -44,8 +44,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          Object.Width           =   5100
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   26.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -74,19 +74,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección1"
-      Object.Height          =   4650
+      Object.Height          =   2325
       NumControls     =   9
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtRegistro_ID"
          Object.Left            =   5669
-         Object.Top             =   3969
+         Object.Top             =   1701
          Object.Width           =   2565
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -111,12 +111,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "txtDoctor_ID"
          Object.Left            =   5670
-         Object.Top             =   567
          Object.Width           =   2565
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -141,12 +140,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "Etiqueta2"
          Object.Left            =   567
-         Object.Top             =   567
          Object.Width           =   4125
          Object.Height          =   810
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -161,12 +159,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "txtIdentificador"
          Object.Left            =   5669
-         Object.Top             =   1701
+         Object.Top             =   567
          Object.Width           =   2565
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -191,12 +189,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "Etiqueta3"
          Object.Left            =   567
-         Object.Top             =   1701
+         Object.Top             =   567
          Object.Width           =   4125
          Object.Height          =   810
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -211,12 +209,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "txtCantidad"
          Object.Left            =   5669
-         Object.Top             =   2835
+         Object.Top             =   1134
          Object.Width           =   2565
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -241,12 +239,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "Etiqueta4"
          Object.Left            =   567
-         Object.Top             =   2835
+         Object.Top             =   1134
          Object.Width           =   4125
          Object.Height          =   795
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -261,12 +259,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
          _Version        =   393216
          Name            =   "Etiqueta1"
          Object.Left            =   567
-         Object.Top             =   3969
+         Object.Top             =   1701
          Object.Width           =   4125
          Object.Height          =   566
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Yu Gothic"
-            Size            =   20.25
+            Name            =   "Century Gothic"
+            Size            =   12
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -288,7 +286,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} DataReport1
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección3"
-      Object.Height          =   1305
       NumControls     =   0
    EndProperty
    SectionCode4    =   8

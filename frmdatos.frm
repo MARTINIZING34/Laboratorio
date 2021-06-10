@@ -18,7 +18,7 @@ Begin VB.Form frmdatos
       Caption         =   "Eliminar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -35,7 +35,7 @@ Begin VB.Form frmdatos
       Caption         =   "Guardar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -107,7 +107,7 @@ Begin VB.Form frmdatos
       Caption         =   "Modificar usuario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -255,7 +255,7 @@ Begin VB.Form frmdatos
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -272,7 +272,7 @@ Begin VB.Form frmdatos
       Caption         =   "Añadir usuario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -515,11 +515,17 @@ Else
     Usuarios
     Administrador
     rsUsuarios.Find "Nombre = '" & txtbuscartexto.Text & "'", , , 1
-    rsAdministrador.Find "Nombre = '" & txtbuscartexto.Text & "'", , , 1
+    If rsUsuarios!Tipo = "Administrador" Then
+        
+        rsAdministrador.Find "Nombre = '" & txtbuscartexto.Text & "'", , , 1
+    End If
     If rsUsuarios.BOF = False And rsUsuarios.EOF = False Then
         If MsgBox("¿Desea eliminar el usuario seleccionado?", vbInformation + vbYesNo, "Laboratorios el Puente") = vbYes Then
+                If rsUsuarios!Tipo = "Administrador" Then
+                    rsAdministrador.Delete
+                End If
                 rsUsuarios.Delete
-                rsAdministrador.Delete
+                'rsAdministrador.Delete
                 MsgBox "Usuario eliminado", vbInformation, "Laboratorios el Puente "
                 Unload Me
                 frmdatos.Show

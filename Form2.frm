@@ -10,15 +10,32 @@ Begin VB.Form frmbuscar
    ClientWidth     =   16500
    LinkTopic       =   "Form2"
    Picture         =   "Form2.frx":0000
-   ScaleHeight     =   8835
-   ScaleWidth      =   16500
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command5 
+      Caption         =   "Cambiar de usuarios"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   12000
+      TabIndex        =   19
+      Top             =   8160
+      Width           =   7095
+   End
    Begin VB.CommandButton Command4 
       Caption         =   "Reportes"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -28,14 +45,14 @@ Begin VB.Form frmbuscar
       Height          =   735
       Left            =   14400
       TabIndex        =   18
-      Top             =   6240
+      Top             =   5760
       Width           =   2295
    End
    Begin VB.CommandButton cmdusuarios 
       Caption         =   "Administrar usuarios"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -45,7 +62,7 @@ Begin VB.Form frmbuscar
       Height          =   615
       Left            =   12000
       TabIndex        =   15
-      Top             =   7560
+      Top             =   6960
       Width           =   7095
    End
    Begin VB.CommandButton Command3 
@@ -53,7 +70,7 @@ Begin VB.Form frmbuscar
       Caption         =   "Eliminar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -64,14 +81,14 @@ Begin VB.Form frmbuscar
       Left            =   16800
       MaskColor       =   &H00000000&
       TabIndex        =   14
-      Top             =   4920
+      Top             =   4440
       Width           =   2295
    End
    Begin VB.CommandButton cmdmodificar 
       Caption         =   "Modificar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -81,7 +98,7 @@ Begin VB.Form frmbuscar
       Height          =   735
       Left            =   12000
       TabIndex        =   13
-      Top             =   6240
+      Top             =   5760
       Width           =   2295
    End
    Begin VB.CommandButton cmdregistrar 
@@ -89,7 +106,7 @@ Begin VB.Form frmbuscar
       Caption         =   "Registrar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -100,7 +117,7 @@ Begin VB.Form frmbuscar
       Left            =   14400
       MaskColor       =   &H00000000&
       TabIndex        =   12
-      Top             =   4920
+      Top             =   4440
       Width           =   2295
    End
    Begin VB.TextBox txtusuario 
@@ -286,7 +303,7 @@ Begin VB.Form frmbuscar
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -296,7 +313,7 @@ Begin VB.Form frmbuscar
       Height          =   690
       Left            =   16800
       TabIndex        =   9
-      Top             =   6240
+      Top             =   5760
       Width           =   2295
    End
    Begin VB.TextBox txtbuscartexto 
@@ -358,7 +375,7 @@ Begin VB.Form frmbuscar
       Caption         =   "Utilizar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   21.75
+         Size            =   18
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -369,7 +386,7 @@ Begin VB.Form frmbuscar
       Left            =   12000
       MaskColor       =   &H00000000&
       TabIndex        =   2
-      Top             =   4920
+      Top             =   4440
       Width           =   2295
    End
    Begin VB.Label lblbuscar 
