@@ -126,6 +126,7 @@ Private Sub Form_Load()
     Image1.Picture = LoadPicture(App.Path & "/ingresar.jpg")
     Image2.Picture = LoadPicture(App.Path & "/salir.jpg")
     Me.Icon = LoadPicture(App.Path & "/logo5.ico")
+    'Image3.Picture = LoadPicture(App.Path & "/user.png")
 End Sub
 
 
